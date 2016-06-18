@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>李启文的博客</title>
+  <subtitle>做最好的自己</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2016-06-18T07:50:42.850Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>selfass</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>使用github + hexo搭建一个属于自己的博客详细教程</title>
+    <link href="http://yoursite.com/2016/06/17/postName/"/>
+    <id>http://yoursite.com/2016/06/17/postName/</id>
+    <published>2016-06-17T08:54:24.000Z</published>
+    <updated>2016-06-18T07:50:42.850Z</updated>
+    
+    <content type="html">&lt;h1 id=&quot;什么是Hexo？&quot;&gt;&lt;a href=&quot;#什么是Hexo？&quot; class=&quot;headerlink&quot; title=&quot;什么是Hexo？&quot;&gt;&lt;/a&gt;什么是Hexo？&lt;/h1&gt;&lt;p&gt;Hexo是一个快速，简洁且搞笑的博客框架。主要优点就是利用MarkdownPad（或其他渲染引擎）解析文章，它主要是可以利用漂亮的主题生成静态网页。接下来就是用Hexo搭建博客的详细过程。有心的童鞋可以去hexo官网看看。其实官网的教程还不错，讲的挺详细的。&lt;/p&gt;
+&lt;p&gt;首先我们说一下安装过程&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;1.安装node.js
+2.安装hexo
+3.安装git
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;由于hexo是基于node.js的，所以在开始之前必须先安装node.js，安装node.js的方法就太简单了。一路下一步下一步就可以了。至于如何去下载，请各位皇上或者太后移驾Node.js官网。&lt;/p&gt;
+&lt;p&gt;至于安装git客户端，和如何注册github账号，不会的请自行百度。&lt;/p&gt;
+&lt;h1 id=&quot;安装Hexo&quot;&gt;&lt;a href=&quot;#安装Hexo&quot; class=&quot;headerlink&quot; title=&quot;安装Hexo&quot;&gt;&lt;/a&gt;安装Hexo&lt;/h1&gt;&lt;p&gt;当node.js和git都安装好了，我们就可以安装hexo了。打开cmd，执行如下命令操作：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;npm install -g hexo
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;-g 代表全局安装hexo，如果安装的时候选择了-g这个参数进行全局安装，那么也就意味着我们可以在命令行的任何地方使用hexo指令。&lt;/p&gt;
+&lt;h1 id=&quot;初始化&quot;&gt;&lt;a href=&quot;#初始化&quot; class=&quot;headerlink&quot; title=&quot;初始化&quot;&gt;&lt;/a&gt;初始化&lt;/h1&gt;&lt;p&gt;打开命令行，进入你想要创建blog文件的目录，这里我选择F盘根目录为博客目录（注意：执行如下命令后，会自动在你制定的目录下创建一个文件夹，我这里是创建的是F：/blog）&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;hexo  init blog 
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;blog是你建立的文件夹的名称，用cd指令进入到该目录下，执行命令，安装hexo依赖：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;cd blog
+hexo install
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;接下来执行开启hexo服务命令&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;hexo server
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;当服务开启后，我们可以在命令行中看到如下结果&lt;/p&gt;
+&lt;p&gt;此时我们打开浏览器，在地址栏输入&lt;a href=&quot;http://localhost:4000/，回车，然后就可以看到hexo的hello&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://localhost:4000/，回车，然后就可以看到hexo的hello&lt;/a&gt; world页面了。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/D4O9jWN.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;h1 id=&quot;关联git&quot;&gt;&lt;a href=&quot;#关联git&quot; class=&quot;headerlink&quot; title=&quot;关联git&quot;&gt;&lt;/a&gt;关联git&lt;/h1&gt;&lt;p&gt;本地设置好了之后，我们接下来开始关联Github.&lt;/p&gt;
+&lt;p&gt;第一步：添加SSH key到github上（这个挺重要的，因为以后我们要使用github向远程服务器推送本地代码，也是需要配置ssh Key的，当然这是后话，我将会在接下来的git操作中讲到配置SSH key 以及推送本地代码到远程仓库）&lt;/p&gt;
+&lt;p&gt;   之前我已经让你们安装了git，所以此时你们一定是没有SSH key这个玩意的。如果没有就可以直接生成一个SSH key，如果有，那就找到它。检测本地是否存在SSH key &lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;ls -al ~/.ssh
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;   这个指令是linux下的指令，在windows下是使用不了的，不过我们可以利用一个搜索工具在硬盘上检索是否存在这个key。搜索我推荐使用everything for search，这个搜索程序是很强大的一款搜索程序，几乎能够实时定位你要检索的文件的位置。要检查是否存在ssh key，直接在everything for search中键入.ssh 就可以了。&lt;/p&gt;
+&lt;p&gt;   生成SSH key的指令为&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ ssh-keygen -t rsa -C &amp;quot;your_email@163.com&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;   一般键入上面的生成SSH key的指令后，什么都不用管，直接连续三个回车就可以生成SSH_key 了，而且默认的生成路径在一般都在”C:\Users\Administrator.ssh”，进入这个文件夹，里面有id.rsa文件和id_rsa.pub,用记事本打开id_rsa.pub，里面的信息即为SSH key，将这些信息复制到GitHub上的Add SHH key就可以了。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;进入GitHub--&amp;gt;Settings--&amp;gt;SSH keys--&amp;gt;add SSH key
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;   进入后，Title字段是随便填写的，将复制的内容粘贴到key里面，点击Add key就可以了。对了，还要记得将”your_email@163.com”这个字符串替换成你自己注册github的邮箱账号就可以了。&lt;/p&gt;
+&lt;p&gt;第二步： 在GitHub上创建一个仓库，作为存放博客页面的仓库&lt;/p&gt;
+&lt;p&gt;   登陆你的github账号，新建仓库，名称为”selfass.github.io”,建立过程如下图所示。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/3uoisU4.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;   我们通过命令行的方式，进入本地的blog目录。键入dir指令可以看到blog目录下的结构为：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;_config.yml
+db.json 
+node_modules 
+package.json
+scaffolds
+source
+themes
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;   通过命令行的方式，我们进入到blog文件夹下，选择_config.yml,用文本编辑器打开，将该文件的最后修改成如图所示的样子&lt;br&gt;   原本打开是这个样子&lt;/p&gt;
+&lt;p&gt;   &lt;img src=&quot;http://i.imgur.com/AH8quvg.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;   替换成这个样子&lt;/p&gt;
+&lt;p&gt;   &lt;img src=&quot;http://i.imgur.com/l6avMYy.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;   deploy:
+type: git
+repository: https://github.com/selfass/selfass.github.io.git
+branch: master
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;   在这个地方我们要特别注意，在配置所有的_config.yml文件的时候（包括theme中的），在所有的冒号”:”后面，都有一个空格，如果没有这个空格，那么你执行hexo命令就会出错。&lt;/p&gt;
+&lt;p&gt;   &lt;img src=&quot;http://i.imgur.com/UdaD1bE.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;  通过命令行的方式，我们定位在blog文件夹下，执行该命令生成静态页面&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;命令为：dexo generate
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;   不出意外的话，应该出现这样的结果&lt;/p&gt;
+&lt;p&gt;   &lt;img src=&quot;http://i.imgur.com/8VMfF5P.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;   但是window系统应该会出错的，所以如果你出错了就执行下面的一条命令&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;npm install hexo --save
+（不出错就忽略这条指令，直接执行下面的指令）
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;   最后再在blog目录下单击鼠标右键，选中gitbash，在gitbash里面执行以下命令&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;hexo deploy（你在gitbash里面执行这个命令的时候，可能会报另外一个错误。仔细看，如果有filename too long这个错误，这个错误的原因很简单，因为在window系统上，git文件的路径长度是有255字符限制的，如果文件字符过长，就会这个错误，解决办法如下
+进入仓库目录下，打开git bash，执行如下指令：
+git config core.longpaths true
+如果想要给所有的仓库都设置，也可以执行 git config --global core.longpaths true)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;   执行结果&lt;br&gt;   &lt;img src=&quot;http://i.imgur.com/R7mnKrt.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;   不出意外，你执行这条语句依然会报错，如果报错在cmd命令下进入blog文件夹下，执行如下命令&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ npm install hexo-deployer-git --save
+（老规矩，出错就执行，不出错就忽略这条语句，这条语句是在cmd进入blog文件夹中执行的。）
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;   执行完后，再执行hexo generate 和 hexo deploy应该就没错了，此时浏览器中打开网址&lt;a href=&quot;http://selfass.github.io（将selfass换成你的用户名）能看到和打开http://localhost:4000时一样的页面&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://selfass.github.io（将selfass换成你的用户名）能看到和打开http://localhost:4000时一样的页面&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;   结果如下&lt;/p&gt;
+&lt;p&gt;   &lt;img src=&quot;http://i.imgur.com/MEcfIGC.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;   如果走到这步，那么恭喜你，你已经成功搭建好你自己的blog了。&lt;/p&gt;
+&lt;h1 id=&quot;发布博客&quot;&gt;&lt;a href=&quot;#发布博客&quot; class=&quot;headerlink&quot; title=&quot;发布博客&quot;&gt;&lt;/a&gt;发布博客&lt;/h1&gt;&lt;p&gt;   使用命令行进入blog目录，执行如下指令&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;hexo new &amp;quot;postName&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;   文件名为postName.md的文件会在新建在F:/blog/source/_posts目录下。你可以用你自己喜欢的文本编辑器编辑这个文件，我一般都是使用MarkdownPad来编辑这个种文件，主要是因为MarkdownPad带有实时预览的效果。&lt;/p&gt;
+&lt;p&gt;   &lt;img src=&quot;http://i.imgur.com/CoXyUDX.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;   文章编辑完成之后，使用命令行进入到blog目录下，执行如下命令来发布blog。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;hexo generate //生成静态页面
+hexo deploy //将文章部署到github上
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;   走到这步，整个blog的搭建以及发布就完成了，下面介绍一下hexo主题的安装，添加评论功能以及绑定个人域名，如果前面你玩的不过瘾，那么你可以继续下去。&lt;/p&gt;
+&lt;h1 id=&quot;安装主题&quot;&gt;&lt;a href=&quot;#安装主题&quot; class=&quot;headerlink&quot; title=&quot;安装主题&quot;&gt;&lt;/a&gt;安装主题&lt;/h1&gt;&lt;p&gt;   hexo的主题你可以去官网下载自己喜欢的主题，这里这里以hexo-theme-indigo为例。&lt;br&gt;   使用命令行工具进入到blog目录，在命令行里执行如下命令&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;git clone git@github.com:yscoder/hexo-theme-indigo.git themes/indigo   // 下载主题 
+npm install hexo-renderer-less --save  // 下载依赖
+npm install hexo-generator-feed --save  // 下载依赖
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;   进入blog修改_config.yml&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;//主题
+theme: indigo
+//插件依赖
+plugins： -hexo-renderer-less -hexo-generator-feed
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;   这里，主题就安装成功了，然后我们进入blog/themes/indigo目录下，打开_config.yml开始配置我们自己的内容，比如名称，描述，头像等可以去修改blog/_config.yml文件和blog/themes/indigo/_config.xml&lt;/p&gt;
+&lt;p&gt;   修改完之后，使用命令行进入到blog目录下执行如下命令（这也是每次部署新文章要执行的命令）&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;hexo clean //清楚缓存文件（db.json）和已经生成的静态文件
+hexo generate  //生成缓存和静态文件
+hexo deploy  //重新部署到服务器
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;   然后在浏览器中打开网址：&lt;a href=&quot;http://selfass.github.io(将selfass换成你自己的用户名)能看到我们刚刚修改的内容。&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://selfass.github.io(将selfass换成你自己的用户名)能看到我们刚刚修改的内容。&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;   到这里，我们的blog基本就算完成了，如果你还想你的blog逼格高一点，那么你可以给你的blog设置一个专属域名。接下来我们就设置专属域名.&lt;/p&gt;
+&lt;h1 id=&quot;更换博客域名&quot;&gt;&lt;a href=&quot;#更换博客域名&quot; class=&quot;headerlink&quot; title=&quot;更换博客域名&quot;&gt;&lt;/a&gt;更换博客域名&lt;/h1&gt;&lt;p&gt;   说到域名嘛，最牛逼的域名网站就属”狗他爹”了，官方网站可以直接去百度搜索，GoDaddy。官网就是&lt;a href=&quot;https://sg.godaddy.com/zh/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://sg.godaddy.com/zh/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;   Github端&lt;br&gt;   在F：/blog/themes/landscape/source目录下新建文件名为：CNAME文件，注意，是没有后缀名的。直接将自己的域名如：selfass.com写入。&lt;/p&gt;
+&lt;p&gt;   使用命令行进入到blog目录下执行如下命令重新部署：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;hexo clean
+hexo generate
+hexo deploy
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;   注意：网上有很多人都说域名映射文件是在github上直接新建CNAME文件，但是如果是这样的话，我们每次执行hexo deploy命令后CNAME文件就消失了，因为本地没有这个文件。&lt;/p&gt;
+&lt;p&gt;   域名解析&lt;br&gt;   如果将域名指向一个域名，实现与被指向域名相同的访问效果，需要增加CNAME记录。进入你买的域名的网站，在你购买的域名后面点击：解析–&amp;gt;添加解析&lt;/p&gt;
+&lt;p&gt;   记录类型：CNAME&lt;/p&gt;
+&lt;p&gt;   主机记录：将域名解析为test.com（不带www）&lt;/p&gt;
+&lt;p&gt;   记录值：selfass.github.io.（不要忘记最后面的一个点， 将selfass改为你自己的用户名，点击保存就可以了）。&lt;/p&gt;
+&lt;p&gt;   此时，点击访问http：//selfass.com和访问&lt;a href=&quot;http://selfass.github.io效果是相同的，到此大功告成。&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://selfass.github.io效果是相同的，到此大功告成。&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&quot;后记&quot;&gt;&lt;a href=&quot;#后记&quot; class=&quot;headerlink&quot; title=&quot;后记&quot;&gt;&lt;/a&gt;后记&lt;/h1&gt;&lt;p&gt;   这个blog搭建真是花费了我好些时间，不得不说，其实也是要花点心思的。以上就是我搭建我自己博客的整个过程，同时也希望对大家有所帮助。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;什么是Hexo？&quot;&gt;&lt;a href=&quot;#什么是Hexo？&quot; class=&quot;headerlink&quot; title=&quot;什么是Hexo？&quot;&gt;&lt;/a&gt;什么是Hexo？&lt;/h1&gt;&lt;p&gt;Hexo是一个快速，简洁且搞笑的博客框架。主要优点就是利用MarkdownPad（或其他渲染
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://yoursite.com/2016/06/17/hello-world/"/>
+    <id>http://yoursite.com/2016/06/17/hello-world/</id>
+    <published>2016-06-17T08:40:08.943Z</published>
+    <updated>2016-06-17T08:40:08.959Z</updated>
+    
+    <content type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;Quick-Start&quot;&gt;&lt;a href=&quot;#Quick-Start&quot; class=&quot;headerlink&quot; title=&quot;Quick Start&quot;&gt;&lt;/a&gt;Quick Start&lt;/h2&gt;&lt;h3 id=&quot;Create-a-new-post&quot;&gt;&lt;a href=&quot;#Create-a-new-post&quot; class=&quot;headerlink&quot; title=&quot;Create a new post&quot;&gt;&lt;/a&gt;Create a new post&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo new &lt;span class=&quot;string&quot;&gt;&quot;My New Post&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/writing.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Writing&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;Run-server&quot;&gt;&lt;a href=&quot;#Run-server&quot; class=&quot;headerlink&quot; title=&quot;Run server&quot;&gt;&lt;/a&gt;Run server&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo server&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/server.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Server&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;Generate-static-files&quot;&gt;&lt;a href=&quot;#Generate-static-files&quot; class=&quot;headerlink&quot; title=&quot;Generate static files&quot;&gt;&lt;/a&gt;Generate static files&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo generate&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/generating.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Generating&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;Deploy-to-remote-sites&quot;&gt;&lt;a href=&quot;#Deploy-to-remote-sites&quot; class=&quot;headerlink&quot; title=&quot;Deploy to remote sites&quot;&gt;&lt;/a&gt;Deploy to remote sites&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo deploy&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/deployment.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Deployment&lt;/a&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
+    
+    </summary>
+    
+    
+  </entry>
+  
+</feed>
