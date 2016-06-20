@@ -3,19 +3,44 @@
 <head>
   <meta charset="utf-8">
   
-  <title>李启文的博客 | 做最好的自己</title>
+  <title>版本控制工具之Git的基本使用（一） | 李启文的博客 | 做最好的自己</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="keywords" content="undefined">
-  <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="李启文的博客">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="keywords" content="">
+  <meta name="description" content="写在前面Git是Linux发明者Linus开发的一款一个分布式版本控制系统。它可以在Linux，Unix和windows平台上运行。
+那么什么又是版本控制呢？先来看看百度百科给出的定义：
+版本控制透过文档控制（documentation control）记录程序各个模组的改动，并为每次改动编上序号。
+这种方法是工程图（engineering drawings）维护（maintenance）的标准做">
+<meta property="og:type" content="article">
+<meta property="og:title" content="版本控制工具之Git的基本使用（一）">
+<meta property="og:url" content="http://yoursite.com/2016/06/19/git/index.html">
 <meta property="og:site_name" content="李启文的博客">
-<meta property="og:description">
+<meta property="og:description" content="写在前面Git是Linux发明者Linus开发的一款一个分布式版本控制系统。它可以在Linux，Unix和windows平台上运行。
+那么什么又是版本控制呢？先来看看百度百科给出的定义：
+版本控制透过文档控制（documentation control）记录程序各个模组的改动，并为每次改动编上序号。
+这种方法是工程图（engineering drawings）维护（maintenance）的标准做">
+<meta property="og:image" content="http://i.imgur.com/Wfg0MHm.png">
+<meta property="og:image" content="http://i.imgur.com/DgO8kC6.png">
+<meta property="og:image" content="http://i.imgur.com/9CgAQll.png">
+<meta property="og:image" content="http://i.imgur.com/VCskCHp.png">
+<meta property="og:image" content="http://i.imgur.com/N8Jj2UE.png">
+<meta property="og:image" content="http://i.imgur.com/29Bcgxh.png">
+<meta property="og:image" content="http://i.imgur.com/atnn4tY.png">
+<meta property="og:image" content="http://i.imgur.com/Vw9aMuE.png">
+<meta property="og:image" content="http://i.imgur.com/B80JtEJ.png">
+<meta property="og:image" content="http://i.imgur.com/G9j7MgC.png">
+<meta property="og:image" content="http://i.imgur.com/3rlR49Y.png">
+<meta property="og:image" content="http://i.imgur.com/v9kjymc.png">
+<meta property="og:image" content="http://i.imgur.com/Yfw2I7S.png">
+<meta property="og:image" content="http://i.imgur.com/jw3KlUw.png">
+<meta property="og:updated_time" content="2016-06-20T04:39:09.229Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="李启文的博客">
-<meta name="twitter:description">
+<meta name="twitter:title" content="版本控制工具之Git的基本使用（一）">
+<meta name="twitter:description" content="写在前面Git是Linux发明者Linus开发的一款一个分布式版本控制系统。它可以在Linux，Unix和windows平台上运行。
+那么什么又是版本控制呢？先来看看百度百科给出的定义：
+版本控制透过文档控制（documentation control）记录程序各个模组的改动，并为每次改动编上序号。
+这种方法是工程图（engineering drawings）维护（maintenance）的标准做">
+<meta name="twitter:image" content="http://i.imgur.com/Wfg0MHm.png">
   
     <link rel="alternative" href="/atom.xml" title="李启文的博客" type="application/atom+xml">
   
@@ -27,7 +52,7 @@
 <body>
   <div id="loading" class="active"></div>
 
-  <nav id="menu"  >
+  <nav id="menu" class="hide" >
    <div class="inner flex-row-vertical">
   <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
       <i class="icon icon-lg icon-close"></i>
@@ -43,7 +68,7 @@
   </div>
   <ul class="nav flex-col">
     
-        <li class="waves-block waves-effect active">
+        <li class="waves-block waves-effect">
           <a href="http://selfass.github.io"  >
             <i class="icon icon-lg icon-home"></i>
             主页
@@ -104,7 +129,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">李启文的博客</div>
+        <div class="flex-col header-title ellipsis">版本控制工具之Git的基本使用（一）</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -125,38 +150,72 @@
 </header>
 <header class="content-header">
   <div class="container">
-    <h1 class="author">李启文的博客</h1>
-    <h5 class="subtitle">做最好的自己</h5>
+    <h1 class="author">版本控制工具之Git的基本使用（一）</h1>
+    <h5 class="subtitle">2016-06-19</h5>
   </div>
 </header>
 
     <div class="container body-wrap">
       
-  <ul class="post-list">
-  
-    <li class="post-list-item">
   <article id="post-git" class="article article-type-post" itemprop="blogPost">
     
-      
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2016/06/19/git/">版本控制工具之Git的基本使用（一）</a>
-    </h3>
-  
-
-
-
       <div class="post-meat flex-row">
         <div class="flex-col"></div>
-        <time datetime="2016-06-18T17:09:06.000Z" itemprop="datePublished" class="post-tiem">
-  2016-06-19
-</time>
       </div>
-      <div class="post-content" id="post-content" itemprop="postContent" >
-        
-          <h1 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h1><p>Git是Linux发明者Linus开发的一款一个分布式版本控制系统。它可以在Linux，Unix和windows平台上运行。</p>
+      <div class="post-body">
+
+        <aside class="post-widget" id="post-widget">
+
+          
+          <div class="post-share" id="post-share">
+    <div class="tit">分享到：</div>
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" href="javascript:;" data-title="微博" data-service="tsina">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns" href="javascript:;" data-title="微信" data-service="weixin">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" href="javascript:;" data-title=" QQ" data-service="cqq">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" href="javascript:;" data-title=" Facebook" data-service="fb">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" href="javascript:;" data-title=" Twitter" data-service="twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="douban share-sns" href="javascript:;" data-title="豆瓣" data-service="douban">
+          豆
+        </a>
+      </li>
+    </ul>
+ </div>
+
+          
+
+          
+          <nav class="post-toc-wrap" id="post-toc">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#写在前面"><span class="post-toc-text">写在前面</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Git下载与安装"><span class="post-toc-text">Git下载与安装</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#git-基本配置信息"><span class="post-toc-text">git 基本配置信息</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#正式进入git之旅"><span class="post-toc-text">正式进入git之旅</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#git-branch基础知识"><span class="post-toc-text">git branch基础知识</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#总结"><span class="post-toc-text">总结</span></a></li></ol>
+          </nav>
+          
+        </aside>
+
+        <div class="post-main">
+
+            <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h1><p>Git是Linux发明者Linus开发的一款一个分布式版本控制系统。它可以在Linux，Unix和windows平台上运行。</p>
 <p>那么什么又是版本控制呢？先来看看百度百科给出的定义：</p>
 <pre><code>版本控制透过文档控制（documentation control）记录程序各个模组的改动，并为每次改动编上序号。
 这种方法是工程图（engineering drawings）维护（maintenance）的标准做法， 它伴随着工程图从图的诞生一直到图的定型。
@@ -250,207 +309,63 @@ git status
 </code></pre><hr>
 <h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>好了，关于git的本地操作基本上就讲完了，这也是我平时在开发当中用到的所有本地命令。其实内容也不算很多，都是很简单的命令，当你运用熟练了之后，你会爱上git命令行方式的操作的，相信我！好了，下面的一章我们将会讲解git远程仓库的一些常见操作。</p>
 
-        
+            <blockquote>
+              <p>
+                本文地址：
+                <a href="http://yoursite.com/2016/06/19/git/" target="_blank" rel="external">http://yoursite.com/2016/06/19/git/</a>
+              </p>
+              <footer><cite><a href="http://yoursite.com">@李启文的博客</a></cite></footer>
+            </blockquote>
+            </div>
+            
+<nav class="post-nav">
+  
+
+  
+    <div class="waves-block waves-effect next fr">
+      <a href="/2016/06/17/postName/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">使用github + hexo搭建一个属于自己的博客详细教程</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+            
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="git" data-title="版本控制工具之Git的基本使用（一）" data-url="http://yoursite.com/2016/06/19/git/index.html"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"ysblog"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+
+
+        </div>
+
       </div>
-      <div class="post-footer clearfix">
-        <a href="/2016/06/19/git/" class="post-more waves-effect waves-button waves-light">MORE</a>
-      </div>
+
     
 
   </article>
 
-
-</li>
-  
-    <li class="post-list-item">
-  <article id="post-postName" class="article article-type-post" itemprop="blogPost">
-    
-      
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2016/06/17/postName/">使用github + hexo搭建一个属于自己的博客详细教程</a>
-    </h3>
-  
-
-
-
-      <div class="post-meat flex-row">
-        <div class="flex-col"></div>
-        <time datetime="2016-06-17T08:54:24.000Z" itemprop="datePublished" class="post-tiem">
-  2016-06-17
-</time>
-      </div>
-      <div class="post-content" id="post-content" itemprop="postContent" >
-        
-          <h1 id="什么是Hexo？"><a href="#什么是Hexo？" class="headerlink" title="什么是Hexo？"></a>什么是Hexo？</h1><p>Hexo是一个快速，简洁且高效的博客框架。主要优点就是利用MarkdownPad（或其他渲染引擎）解析文章，它主要是可以利用漂亮的主题生成静态网页。接下来就是用Hexo搭建博客的详细过程。有心的童鞋可以去hexo官网看看。其实官网的教程还不错，讲的挺详细的。</p>
-<p>首先我们说一下安装过程</p>
-<pre><code>1.安装node.js
-2.安装hexo
-3.安装git
-</code></pre><p>由于hexo是基于node.js的，所以在开始之前必须先安装node.js，安装node.js的方法就太简单了。一路下一步下一步就可以了。至于如何去下载，请各位皇上或者太后移驾Node.js官网。</p>
-<p>至于安装git客户端，和如何注册github账号，不会的请自行百度。</p>
-<h1 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h1><p>当node.js和git都安装好了，我们就可以安装hexo了。打开cmd，执行如下命令操作：</p>
-<pre><code>npm install -g hexo
-</code></pre><p>-g 代表全局安装hexo，如果安装的时候选择了-g这个参数进行全局安装，那么也就意味着我们可以在命令行的任何地方使用hexo指令。</p>
-<h1 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h1><p>打开命令行，进入你想要创建blog文件的目录，这里我选择F盘根目录为博客目录（注意：执行如下命令后，会自动在你制定的目录下创建一个文件夹，我这里是创建的是F：/blog）</p>
-<pre><code>hexo  init blog 
-</code></pre><p>blog是你建立的文件夹的名称，用cd指令进入到该目录下，执行命令，安装hexo依赖：</p>
-<pre><code>cd blog
-hexo install
-</code></pre><p>接下来执行开启hexo服务命令</p>
-<pre><code>hexo server
-</code></pre><p>当服务开启后，我们可以在命令行中看到如下结果</p>
-<p>此时我们打开浏览器，在地址栏输入<a href="http://localhost:4000/，回车，然后就可以看到hexo的hello" target="_blank" rel="external">http://localhost:4000/，回车，然后就可以看到hexo的hello</a> world页面了。</p>
-<p><img src="http://i.imgur.com/D4O9jWN.png" alt=""></p>
-<h1 id="关联git"><a href="#关联git" class="headerlink" title="关联git"></a>关联git</h1><p>本地设置好了之后，我们接下来开始关联Github.</p>
-<p>第一步：添加SSH key到github上（这个挺重要的，因为以后我们要使用github向远程服务器推送本地代码，也是需要配置ssh Key的，当然这是后话，我将会在接下来的git操作中讲到配置SSH key 以及推送本地代码到远程仓库）</p>
-<p>   之前我已经让你们安装了git，所以此时你们一定是没有SSH key这个玩意的。如果没有就可以直接生成一个SSH key，如果有，那就找到它。检测本地是否存在SSH key </p>
-<pre><code>ls -al ~/.ssh
-</code></pre><p>   这个指令是linux下的指令，在windows下是使用不了的，不过我们可以利用一个搜索工具在硬盘上检索是否存在这个key。搜索我推荐使用everything for search，这个搜索程序是很强大的一款搜索程序，几乎能够实时定位你要检索的文件的位置。要检查是否存在ssh key，直接在everything for search中键入.ssh 就可以了。</p>
-<p>   生成SSH key的指令为</p>
-<pre><code>$ ssh-keygen -t rsa -C &quot;your_email@163.com&quot;
-</code></pre><p>   一般键入上面的生成SSH key的指令后，什么都不用管，直接连续三个回车就可以生成SSH_key 了，而且默认的生成路径在一般都在”C:\Users\Administrator.ssh”，进入这个文件夹，里面有id.rsa文件和id_rsa.pub,用记事本打开id_rsa.pub，里面的信息即为SSH key，将这些信息复制到GitHub上的Add SHH key就可以了。</p>
-<pre><code>进入GitHub--&gt;Settings--&gt;SSH keys--&gt;add SSH key
-</code></pre><p>   进入后，Title字段是随便填写的，将复制的内容粘贴到key里面，点击Add key就可以了。对了，还要记得将”your_email@163.com”这个字符串替换成你自己注册github的邮箱账号就可以了。</p>
-<p>第二步： 在GitHub上创建一个仓库，作为存放博客页面的仓库</p>
-<p>   登陆你的github账号，新建仓库，名称为”selfass.github.io”,建立过程如下图所示。</p>
-<p><img src="http://i.imgur.com/3uoisU4.png" alt=""></p>
-<p>   我们通过命令行的方式，进入本地的blog目录。键入dir指令可以看到blog目录下的结构为：</p>
-<pre><code>_config.yml
-db.json 
-node_modules 
-package.json
-scaffolds
-source
-themes
-</code></pre><p>   通过命令行的方式，我们进入到blog文件夹下，选择_config.yml,用文本编辑器打开，将该文件的最后修改成如图所示的样子<br>   原本打开是这个样子</p>
-<p>   <img src="http://i.imgur.com/AH8quvg.png" alt=""></p>
-<p>   替换成这个样子</p>
-<p>   <img src="http://i.imgur.com/l6avMYy.png" alt=""></p>
-<pre><code>   deploy:
-type: git
-repository: https://github.com/selfass/selfass.github.io.git
-branch: master
-</code></pre><p>   在这个地方我们要特别注意，在配置所有的_config.yml文件的时候（包括theme中的），在所有的冒号”:”后面，都有一个空格，如果没有这个空格，那么你执行hexo命令就会出错。</p>
-<p>   <img src="http://i.imgur.com/UdaD1bE.png" alt=""></p>
-<p>  通过命令行的方式，我们定位在blog文件夹下，执行该命令生成静态页面</p>
-<pre><code>命令为：dexo generate
-</code></pre><p>   不出意外的话，应该出现这样的结果</p>
-<p>   <img src="http://i.imgur.com/8VMfF5P.png" alt=""></p>
-<p>   但是window系统应该会出错的，所以如果你出错了就执行下面的一条命令</p>
-<pre><code>npm install hexo --save
-（不出错就忽略这条指令，直接执行下面的指令）
-</code></pre><p>   最后再在blog目录下单击鼠标右键，选中gitbash，在gitbash里面执行以下命令</p>
-<pre><code>hexo deploy（你在gitbash里面执行这个命令的时候，可能会报另外一个错误。仔细看，如果有filename too long这个错误，这个错误的原因很简单，因为在window系统上，git文件的路径长度是有255字符限制的，如果文件字符过长，就会这个错误，解决办法如下
-进入仓库目录下，打开git bash，执行如下指令：
-git config core.longpaths true
-如果想要给所有的仓库都设置，也可以执行 git config --global core.longpaths true)
-</code></pre><p>   执行结果<br>   <img src="http://i.imgur.com/R7mnKrt.png" alt=""></p>
-<p>   不出意外，你执行这条语句依然会报错，如果报错在cmd命令下进入blog文件夹下，执行如下命令</p>
-<pre><code>$ npm install hexo-deployer-git --save
-（老规矩，出错就执行，不出错就忽略这条语句，这条语句是在cmd进入blog文件夹中执行的。）
-</code></pre><p>   执行完后，再执行hexo generate 和 hexo deploy应该就没错了，此时浏览器中打开网址<a href="http://selfass.github.io（将selfass换成你的用户名）能看到和打开http://localhost:4000时一样的页面" target="_blank" rel="external">http://selfass.github.io（将selfass换成你的用户名）能看到和打开http://localhost:4000时一样的页面</a></p>
-<p>   结果如下</p>
-<p>   <img src="http://i.imgur.com/MEcfIGC.png" alt=""></p>
-<p>   如果走到这步，那么恭喜你，你已经成功搭建好你自己的blog了。</p>
-<h1 id="发布博客"><a href="#发布博客" class="headerlink" title="发布博客"></a>发布博客</h1><p>   使用命令行进入blog目录，执行如下指令</p>
-<pre><code>hexo new &quot;postName&quot;
-</code></pre><p>   文件名为postName.md的文件会在新建在F:/blog/source/_posts目录下。你可以用你自己喜欢的文本编辑器编辑这个文件，我一般都是使用MarkdownPad来编辑这个种文件，主要是因为MarkdownPad带有实时预览的效果。</p>
-<p>   <img src="http://i.imgur.com/CoXyUDX.png" alt=""></p>
-<p>   文章编辑完成之后，使用命令行进入到blog目录下，执行如下命令来发布blog。</p>
-<pre><code>hexo generate //生成静态页面
-hexo deploy //将文章部署到github上
-</code></pre><p>   走到这步，整个blog的搭建以及发布就完成了，下面介绍一下hexo主题的安装，添加评论功能以及绑定个人域名，如果前面你玩的不过瘾，那么你可以继续下去。</p>
-<h1 id="安装主题"><a href="#安装主题" class="headerlink" title="安装主题"></a>安装主题</h1><p>   hexo的主题你可以去官网下载自己喜欢的主题，这里这里以hexo-theme-indigo为例。<br>   使用命令行工具进入到blog目录，在命令行里执行如下命令</p>
-<pre><code>git clone git@github.com:yscoder/hexo-theme-indigo.git themes/indigo   // 下载主题 
-npm install hexo-renderer-less --save  // 下载依赖
-npm install hexo-generator-feed --save  // 下载依赖
-</code></pre><p>   进入blog修改_config.yml</p>
-<pre><code>//主题
-theme: indigo
-//插件依赖
-plugins： -hexo-renderer-less -hexo-generator-feed
-</code></pre><p>   这里，主题就安装成功了，然后我们进入blog/themes/indigo目录下，打开_config.yml开始配置我们自己的内容，比如名称，描述，头像等可以去修改blog/_config.yml文件和blog/themes/indigo/_config.xml</p>
-<p>   修改完之后，使用命令行进入到blog目录下执行如下命令（这也是每次部署新文章要执行的命令）</p>
-<pre><code>hexo clean //清楚缓存文件（db.json）和已经生成的静态文件
-hexo generate  //生成缓存和静态文件
-hexo deploy  //重新部署到服务器
-</code></pre><p>   然后在浏览器中打开网址：<a href="http://selfass.github.io(将selfass换成你自己的用户名)能看到我们刚刚修改的内容。" target="_blank" rel="external">http://selfass.github.io(将selfass换成你自己的用户名)能看到我们刚刚修改的内容。</a></p>
-<p>   到这里，我们的blog基本就算完成了，如果你还想你的blog逼格高一点，那么你可以给你的blog设置一个专属域名。接下来我们就设置专属域名.</p>
-<h1 id="更换博客域名"><a href="#更换博客域名" class="headerlink" title="更换博客域名"></a>更换博客域名</h1><p>   说到域名嘛，最牛逼的域名网站就属”狗他爹”了，官方网站可以直接去百度搜索，GoDaddy。官网就是<a href="https://sg.godaddy.com/zh/" target="_blank" rel="external">https://sg.godaddy.com/zh/</a></p>
-<p>   Github端<br>   在F：/blog/themes/landscape/source目录下新建文件名为：CNAME文件，注意，是没有后缀名的。直接将自己的域名如：selfass.com写入。</p>
-<p>   使用命令行进入到blog目录下执行如下命令重新部署：</p>
-<pre><code>hexo clean
-hexo generate
-hexo deploy
-</code></pre><p>   注意：网上有很多人都说域名映射文件是在github上直接新建CNAME文件，但是如果是这样的话，我们每次执行hexo deploy命令后CNAME文件就消失了，因为本地没有这个文件。</p>
-<p>   域名解析<br>   如果将域名指向一个域名，实现与被指向域名相同的访问效果，需要增加CNAME记录。进入你买的域名的网站，在你购买的域名后面点击：解析–&gt;添加解析</p>
-<p>   记录类型：CNAME</p>
-<p>   主机记录：将域名解析为test.com（不带www）</p>
-<p>   记录值：selfass.github.io.（不要忘记最后面的一个点， 将selfass改为你自己的用户名，点击保存就可以了）。</p>
-<p>   此时，点击访问http：//selfass.com和访问<a href="http://selfass.github.io效果是相同的，到此大功告成。" target="_blank" rel="external">http://selfass.github.io效果是相同的，到此大功告成。</a></p>
-<h1 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h1><p>   这个blog搭建真是花费了我好些时间，不得不说，其实也是要花点心思的。以上就是我搭建我自己博客的整个过程，同时也希望对大家有所帮助。</p>
-
-        
-      </div>
-      <div class="post-footer clearfix">
-        <a href="/2016/06/17/postName/" class="post-more waves-effect waves-button waves-light">MORE</a>
-      </div>
-    
-
-  </article>
-
-
-</li>
-  
-    <li class="post-list-item">
-  <article id="post-hello-world" class="article article-type-post" itemprop="blogPost">
-    
-      
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2016/06/17/hello-world/">Hello World</a>
-    </h3>
-  
-
-
-
-      <div class="post-meat flex-row">
-        <div class="flex-col"></div>
-        <time datetime="2016-06-17T08:40:08.943Z" itemprop="datePublished" class="post-tiem">
-  2016-06-17
-</time>
-      </div>
-      <div class="post-content" id="post-content" itemprop="postContent" >
-        
-          <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-        
-      </div>
-      <div class="post-footer clearfix">
-        <a href="/2016/06/17/hello-world/" class="post-more waves-effect waves-button waves-light">MORE</a>
-      </div>
-    
-
-  </article>
-
-
-</li>
-  
-  </ul>
-  
 
 
     </div>
@@ -460,10 +375,10 @@ hexo deploy
 
 <script>
 var BLOG_SHARE = {
-    title: "李启文的博客",
+    title: "版本控制工具之Git的基本使用（一）",
     pic: "/img/logo.jpg",
     summary: document.getElementsByName('summary')[0].content,
-    url: "http://yoursite.com/index.html"
+    url: "http://yoursite.com/2016/06/19/git/index.html"
 };
 </script>
 <div class="global-share" id="global-share">

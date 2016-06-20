@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-06-18T11:50:06.405Z</updated>
+  <updated>2016-06-20T04:39:09.229Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,117 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>版本控制工具之Git的基本使用（一）</title>
+    <link href="http://yoursite.com/2016/06/19/git/"/>
+    <id>http://yoursite.com/2016/06/19/git/</id>
+    <published>2016-06-18T17:09:06.000Z</published>
+    <updated>2016-06-20T04:39:09.229Z</updated>
+    
+    <content type="html">&lt;h1 id=&quot;写在前面&quot;&gt;&lt;a href=&quot;#写在前面&quot; class=&quot;headerlink&quot; title=&quot;写在前面&quot;&gt;&lt;/a&gt;写在前面&lt;/h1&gt;&lt;p&gt;Git是Linux发明者Linus开发的一款一个分布式版本控制系统。它可以在Linux，Unix和windows平台上运行。&lt;/p&gt;
+&lt;p&gt;那么什么又是版本控制呢？先来看看百度百科给出的定义：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;版本控制透过文档控制（documentation control）记录程序各个模组的改动，并为每次改动编上序号。
+这种方法是工程图（engineering drawings）维护（maintenance）的标准做法， 它伴随着工程图从图的诞生一直到图的定型。
+ 一种简单的版本控制形式，例如，赋给图的初版一个版本等级“A”。
+当做了第一次改变后，版本等级改为“B”，以此类推等等。
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;用一个通俗的话来讲：当我们在开发一个项目的时候，为了防止代码丢失，我们肯定会想办法在本地硬盘存放一份，在服务器端也存放一份，万一本地的代码丢失了，我们还可以在从服务器中获取我们原来的代码。但是我们如何保证本地代码和服务器代码是一致的呢？再者，我们开发一个项目并不是一个人在进行开发，一个项目是由多人合作开发完成的，可能一份代码并不是由一个人在进行维护，大家都在改同一份代码，怎样能够知道这份代码哪里是由谁更改的。另外，项目开发中，难免会出现bug，如果一个项目刚上线，就出现了一个很严重的bug，这时候就需要对代码进行还原。。。还有，我们需要知道代码提交的记录以及日志信息，等等这些功能。&lt;/p&gt;
+&lt;p&gt;上述的这些情况，就是版本控制系统能够实现的功能。当下流行的版本控制工具有很多，比如svn，git。如果在早些年，我会推荐你们用svn，但是以目前的现状来看，大部分公司都是用git来进行版本控制的，所以git是当之无愧当下最流行的版本控制系统。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1 id=&quot;Git下载与安装&quot;&gt;&lt;a href=&quot;#Git下载与安装&quot; class=&quot;headerlink&quot; title=&quot;Git下载与安装&quot;&gt;&lt;/a&gt;Git下载与安装&lt;/h1&gt;&lt;p&gt;git下载和安装就不说了，不会的自行百度。安装要提醒一下，可以安装是可以带图形界面和命令行的，但是我不推荐你们使用图形界面来操作git。只有多多使用命令行，你才能理解git每一步操作的意义。&lt;/p&gt;
+&lt;p&gt;如何判断git是否安装成功了，可以在gitbash页面输入&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;git --version
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;如果能看到git的版本信息，就可以认为git是安装成功了。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/Wfg0MHm.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;或者你也可以直接输入&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;git --help
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;能够看到下面的帮助信息也能说明git是安装成功了。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/DgO8kC6.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1 id=&quot;git-基本配置信息&quot;&gt;&lt;a href=&quot;#git-基本配置信息&quot; class=&quot;headerlink&quot; title=&quot;git 基本配置信息&quot;&gt;&lt;/a&gt;git 基本配置信息&lt;/h1&gt;&lt;p&gt;git安装好了之后，我们在开始使用git之前，必须先对git进行配置。&lt;/p&gt;
+&lt;p&gt;1、配置用户名和邮箱&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;git config --global user.name &amp;quot;yourname&amp;quot;
+git config --global user.email &amp;quot;youremail@163.com&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;注意：上面的指令”yourname” 填你自己的用户名，”youremail@163.com” 这里填你自己的邮箱&lt;/p&gt;
+&lt;p&gt;2、验证用户名和邮箱&lt;br&gt;执行完上述指令后，我们同样可以用这个指令去检测用户名和密码&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;git config --global user.name
+git config --global user.email
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;结果如下&lt;br&gt;&lt;img src=&quot;http://i.imgur.com/9CgAQll.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1 id=&quot;正式进入git之旅&quot;&gt;&lt;a href=&quot;#正式进入git之旅&quot; class=&quot;headerlink&quot; title=&quot;正式进入git之旅&quot;&gt;&lt;/a&gt;正式进入git之旅&lt;/h1&gt;&lt;p&gt;配置好用户名和邮箱之后，我们开始正式操作git。&lt;/p&gt;
+&lt;p&gt;1、第一步，我们进入一个目录，新建一个文件夹。（这里我是用指令完成的，你们自己随意，推荐你们用指令，虽然用的是windows操作系统，但是还是要有把windows当linux玩的心，刚开始使用指令肯定是很别扭的，强迫自己用，习惯就好了。）&lt;/p&gt;
+&lt;p&gt;操作过程如下：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/VCskCHp.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;我们将test作为我们的git仓库。在这里注意一下，我们所有的git操作都必须进入到git仓库目录下才能执行。也就是说要进入test目录后在执行git指令。&lt;/p&gt;
+&lt;p&gt;我们先随便输入一个简单的指令，比如查看git仓库状态的指令。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;git status
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;这里是会报错的，报的错误如下。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/N8Jj2UE.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;意思已经说的很明白了，是说test这个文件夹还不是一个git仓库，如果我们想要执行git指令，必须要先将test文件夹变成git目录。这时候，我们就用到了git的第一个指令。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;git init
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;初始化git仓库&lt;/p&gt;
+&lt;p&gt;执行结果如下所示&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/29Bcgxh.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;执行完成后，test就成为了一个git的仓库。现在我们再来看一看git stauts是指令输入什么结果：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/atnn4tY.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;2、第二步：我刚用指令在test文件夹下新建了一个test.md文件。现在我们将test.md这个文件添加进来，然后我们再看git的状态信息，执行如下指令&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;git add test.md
+git status
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/Vw9aMuE.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;此时我们可以从提示中看到，Changes to be commited，这段英文的意思就是这个文件等待被提交，如果我们不想提交这个文件，或者选择错了这个文件，可以直接使用命令移除这个文件。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;git rm --cached
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;添加单个文件是git add 文件名，但是如果我们要添加多个文件或者整个文件夹呢？ 如果是要添加整个文件夹，可以使用如下指令：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;git add 文件夹名
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;如果是要添加所有的文件，我们可以使用如下指令：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;git add .
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;3、第三步：提交文件&lt;/p&gt;
+&lt;p&gt;我们如果要提交文件，一般都是使用git commit这个指令去执行，但是这个指令后面必须加上一系列附加信息，不然这次的添加将会被认为是不合法的提交。&lt;br&gt;提交指令为：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;git commit -m &amp;quot;This is my comments&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;提交完成后，我们可以再执行git status 查看提交信息&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/B80JtEJ.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;友情提醒：-m 后面的注释信息可以填写中文，不会出现乱码的&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;第四步：查看提交信息&lt;/p&gt;
+&lt;p&gt;如果我们需要查看git上的代码有哪些人提交过代码，我们可以使用如下指令来查看提交信息。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;git log
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;结果为：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/G9j7MgC.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;git log命令可以查看所有的提交记录，由于我们只是提交了一次，所以只有一条commit信息，而且提交的时候附带的注释信息是”我的第一次提交”。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1 id=&quot;git-branch基础知识&quot;&gt;&lt;a href=&quot;#git-branch基础知识&quot; class=&quot;headerlink&quot; title=&quot;git branch基础知识&quot;&gt;&lt;/a&gt;git branch基础知识&lt;/h1&gt;&lt;p&gt;branch，就是分支，分流，分叉的意思，通俗来说，一个git枝干上有一个master和多个branch，默认情况下是没有branch（分支）的，只有一个主分支（master），想要查看分支信息，可以使用如下指令来进行查看：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;git branch
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/3rlR49Y.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;分支的概念是很重要的，举个比较容易理解的例子，现在有一个项目Project，项目组长会申请一个master，然后交由下面的几个人进行开发，甲开发的是A模块，那么甲应该在主分支的基础上新建一个分支a，在分支a上进行开发，乙开发的是B模块，那么乙应该在主分支的基础上新建一个分支b，在分支b上进行开发。这样就能够保证甲和乙两个人各自开发各自的模块，相互独立，各不影响。最后当两者同时开发完成后，将甲的分支a与乙的分支b合并到主分支上去。&lt;/p&gt;
+&lt;p&gt;一般来说，当我们使用git init初始化一个git仓库的时候，git会默认帮我们生成一个主分支，也是我们默认所在的分支，一般情况下，master主分支上的代码不会被改变，如果某个人想要改变代码，必须要新建一个分支，然后在分支的基础上进行改动，测试没有问题后，在合并到主分支上去。&lt;/p&gt;
+&lt;p&gt;上面我们已经说了查看分支的指令，如果我们想要新建一个分支，怎么办呢？这也是很简单的，执行如下命令就可以了新建一个分支。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;git branch hello
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/v9kjymc.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;执行上面的指令就新建了一个名为hello的分支，这个hello分支与master主分支的内容是完全一样的，不会发生任何变化，相当于从主分支克隆出来一个副本进行更改，如果确认没有错误了，在合并到主分支上去。这就相当于大学更改论文一样，我们一般会保留一个版本（master主分支），如果这个版本的论文需要更改，我们就复制出论文的一个副本（branch）出来更改，确定复制出来的副本（branch）论文内容没有错误了，我们就将副本（branch）的内容合并到保留版本（master主分支）上去。这样既可以保证主分支的内容始终都是正确的。&lt;/p&gt;
+&lt;p&gt;现在我们已经新建了一个branch，我们在上面使用了git branch查看了当前的分支，的确时出现了两个分支，但是细心的同学估计已经看到了在master主分支的前面是有一个星号（*）的，这个星号表明现在我们仍然处在master上，那么如果我们要在分支上进行开发，我们应该怎样切换到其他分支上去呢？哈哈，当然，这也是不难的。执行下面的命令：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;git checkout hello
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/Yfw2I7S.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;现在再使用git branch 查看当前的分支，你会惊奇的发现，星号现在已经在hello的前面了，现在你就可以在当前分支下进行我们的开发了。&lt;/p&gt;
+&lt;p&gt;这样先新建再切换还是有点麻烦，有一步解决问题的办法。执行如下指令：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;git checkout -b world
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;这行命令的意思就是先新建一个world分支，然后再自动切换到world分支。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/jw3KlUw.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;既然有新建分支，肯定就有删除分支的操作。如果我们要删除hello分支，我们可以直接使用如下指令，删除hello分支的指令如下：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;git branch -d hello
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;上面的这种情况只使用于里面什么都没有的情况，但是如果我们主分支中有代码，而且hello分支中也有代码，当我们执行删除的时候，我们是删除不了这个分支的，因为git会自作主张的提示你，你的代码没有和master分支合并，不建议你删除，此时你可以执行如下指令强制删除这个分支：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;git branch -D hello
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;最后一个就是代码合并，代码合并有几点要求必须要注意，主要就是我们在合并代码的同时，我们必须先切换到master上，然后执行如下指令就可以把branch（hello）上的代码成功合并到主分支上去。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;git merge hello
+&lt;/code&gt;&lt;/pre&gt;&lt;hr&gt;
+&lt;h1 id=&quot;总结&quot;&gt;&lt;a href=&quot;#总结&quot; class=&quot;headerlink&quot; title=&quot;总结&quot;&gt;&lt;/a&gt;总结&lt;/h1&gt;&lt;p&gt;好了，关于git的本地操作基本上就讲完了，这也是我平时在开发当中用到的所有本地命令。其实内容也不算很多，都是很简单的命令，当你运用熟练了之后，你会爱上git命令行方式的操作的，相信我！好了，下面的一章我们将会讲解git远程仓库的一些常见操作。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;写在前面&quot;&gt;&lt;a href=&quot;#写在前面&quot; class=&quot;headerlink&quot; title=&quot;写在前面&quot;&gt;&lt;/a&gt;写在前面&lt;/h1&gt;&lt;p&gt;Git是Linux发明者Linus开发的一款一个分布式版本控制系统。它可以在Linux，Unix和windows平台上运行。
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>使用github + hexo搭建一个属于自己的博客详细教程</title>
