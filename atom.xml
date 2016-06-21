@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-06-20T04:39:09.229Z</updated>
+  <updated>2016-06-21T02:07:29.202Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -16,11 +16,27 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>git2.md</title>
+    <link href="http://yoursite.com/2016/06/21/git2-md/"/>
+    <id>http://yoursite.com/2016/06/21/git2-md/</id>
+    <published>2016-06-21T02:07:29.000Z</published>
+    <updated>2016-06-21T02:07:29.202Z</updated>
+    
+    <content type="html"></content>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>版本控制工具之Git的基本使用（一）</title>
     <link href="http://yoursite.com/2016/06/19/git/"/>
     <id>http://yoursite.com/2016/06/19/git/</id>
     <published>2016-06-18T17:09:06.000Z</published>
-    <updated>2016-06-20T04:39:09.229Z</updated>
+    <updated>2016-06-21T06:09:20.030Z</updated>
     
     <content type="html">&lt;h1 id=&quot;写在前面&quot;&gt;&lt;a href=&quot;#写在前面&quot; class=&quot;headerlink&quot; title=&quot;写在前面&quot;&gt;&lt;/a&gt;写在前面&lt;/h1&gt;&lt;p&gt;Git是Linux发明者Linus开发的一款一个分布式版本控制系统。它可以在Linux，Unix和windows平台上运行。&lt;/p&gt;
 &lt;p&gt;那么什么又是版本控制呢？先来看看百度百科给出的定义：&lt;/p&gt;
@@ -59,7 +75,7 @@ git config --global user.email
 &lt;p&gt;我们先随便输入一个简单的指令，比如查看git仓库状态的指令。&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;git status
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;这里是会报错的，报的错误如下。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/N8Jj2UE.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/4kJf9hx.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
 &lt;p&gt;意思已经说的很明白了，是说test这个文件夹还不是一个git仓库，如果我们想要执行git指令，必须要先将test文件夹变成git目录。这时候，我们就用到了git的第一个指令。&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;git init
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;初始化git仓库&lt;/p&gt;
@@ -67,8 +83,8 @@ git config --global user.email
 &lt;p&gt;&lt;img src=&quot;http://i.imgur.com/29Bcgxh.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
 &lt;p&gt;执行完成后，test就成为了一个git的仓库。现在我们再来看一看git stauts是指令输入什么结果：&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;http://i.imgur.com/atnn4tY.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;2、第二步：我刚用指令在test文件夹下新建了一个test.md文件。现在我们将test.md这个文件添加进来，然后我们再看git的状态信息，执行如下指令&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;git add test.md
+&lt;p&gt;2、第二步：我刚用指令在test文件夹下新建了一个newText.md文件。现在我们将newText.md这个文件添加进来，然后我们再看git的状态信息，执行如下指令&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;git add newText.md
 git status
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/Vw9aMuE.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
 &lt;p&gt;此时我们可以从提示中看到，Changes to be commited，这段英文的意思就是这个文件等待被提交，如果我们不想提交这个文件，或者选择错了这个文件，可以直接使用命令移除这个文件。&lt;/p&gt;

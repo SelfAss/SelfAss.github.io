@@ -135,6 +135,41 @@
   <ul class="post-list">
   
     <li class="post-list-item">
+  <article id="post-git2-md" class="article article-type-post" itemprop="blogPost">
+    
+      
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2016/06/21/git2-md/">git2.md</a>
+    </h3>
+  
+
+
+
+      <div class="post-meat flex-row">
+        <div class="flex-col"></div>
+        <time datetime="2016-06-21T02:07:29.000Z" itemprop="datePublished" class="post-tiem">
+  2016-06-21
+</time>
+      </div>
+      <div class="post-content" id="post-content" itemprop="postContent" >
+        
+          
+        
+      </div>
+      <div class="post-footer clearfix">
+        <a href="/2016/06/21/git2-md/" class="post-more waves-effect waves-button waves-light">MORE</a>
+      </div>
+    
+
+  </article>
+
+
+</li>
+  
+    <li class="post-list-item">
   <article id="post-git" class="article article-type-post" itemprop="blogPost">
     
       
@@ -193,7 +228,7 @@ git config --global user.email
 <p>我们先随便输入一个简单的指令，比如查看git仓库状态的指令。</p>
 <pre><code>git status
 </code></pre><p>这里是会报错的，报的错误如下。</p>
-<p><img src="http://i.imgur.com/N8Jj2UE.png" alt=""></p>
+<p><img src="http://i.imgur.com/4kJf9hx.png" alt=""></p>
 <p>意思已经说的很明白了，是说test这个文件夹还不是一个git仓库，如果我们想要执行git指令，必须要先将test文件夹变成git目录。这时候，我们就用到了git的第一个指令。</p>
 <pre><code>git init
 </code></pre><p>初始化git仓库</p>
@@ -201,8 +236,8 @@ git config --global user.email
 <p><img src="http://i.imgur.com/29Bcgxh.png" alt=""></p>
 <p>执行完成后，test就成为了一个git的仓库。现在我们再来看一看git stauts是指令输入什么结果：</p>
 <p><img src="http://i.imgur.com/atnn4tY.png" alt=""></p>
-<p>2、第二步：我刚用指令在test文件夹下新建了一个test.md文件。现在我们将test.md这个文件添加进来，然后我们再看git的状态信息，执行如下指令</p>
-<pre><code>git add test.md
+<p>2、第二步：我刚用指令在test文件夹下新建了一个newText.md文件。现在我们将newText.md这个文件添加进来，然后我们再看git的状态信息，执行如下指令</p>
+<pre><code>git add newText.md
 git status
 </code></pre><p><img src="http://i.imgur.com/Vw9aMuE.png" alt=""></p>
 <p>此时我们可以从提示中看到，Changes to be commited，这段英文的意思就是这个文件等待被提交，如果我们不想提交这个文件，或者选择错了这个文件，可以直接使用命令移除这个文件。</p>
